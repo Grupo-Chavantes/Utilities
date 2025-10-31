@@ -1,0 +1,68 @@
+# PDFs Lister
+
+Este script escaneia recursivamente o diretório de trabalho atual em busca de arquivos PDF e grava cada caminho completo como uma linha em `pdfs_paths.csv`. O CSV é criado no diretório onde o script ou executável é executado.
+
+---
+
+### Requisitos
+
+- **Python 3.12+**
+- **Módulo [venv](https://docs.python.org/3/library/venv.html)**
+
+---
+
+### Executar no Linux
+
+1. Abra um terminal e navegue até o diretório que contém o script:
+```bash
+cd /caminho/para/utilities/pdfs_lister
+```
+
+2. Crie e ative um ambiente virtual:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+4. Execute o script:
+```bash
+python3 pdfs_lister.py
+```
+
+5. Ao terminar, desative o ambiente virtual:
+```bash
+deactivate
+```
+
+---
+
+### Observações importantes
+
+- O script usa `Path.cwd()` como ponto de partida; execute-o a partir do diretório que deseja escanear.
+- O arquivo de saída `pdfs_paths.csv` será criado ou sobrescrito no diretório atual.
+- Entradas problemáticas (erros de permissão, symlinks quebrados) são ignoradas; o script continua a busca.
+
+---
+
+### Gerar executável Windows
+
+1. Numa máquina Windows, abra o prompt de comando e navegue até o diretório que contém o script:
+```bash
+cd /caminho/para/utilities/pdfs_lister
+```
+
+2. Crie e ative um ambiente virtual:
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+3. Instale o PyInstaller, gere o executável, e desative o ambiente virtual:
+```bash
+python -m pip install --upgrade pip
+python -m pip install pyinstaller
+pyinstaller --onefile pdfs_lister.py
+deactivate
+```
+
+3. Após concluído, o executável estará em `dist\pdfs_lister.exe`. Copie-o (ou mova-o) e execute onde desejar.
