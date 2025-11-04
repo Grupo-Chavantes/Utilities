@@ -1,7 +1,10 @@
-<div id="<%= dom_id sipef_inference %>">
-  <div>
-    <strong>Status:</strong>
-    <%= sipef_inference.status %>
-  </div>
-
-</div>
+<tr id="<%= dom_id(sipef_inference) %>">
+  <td><%= sipef_inference.input_file.filename %></td>
+  <td><%= sipef_inference.humanize_status %></td>
+  <td>
+    <% if %w[processed failed].include?(sipef_inference.status) %>
+      <!-- TODO: Implement the download of the output file if the status is processed. -->
+      <%= button_to 'Excluir', sipef_inference_path(sipef_inference), method: :delete, data: { confirm: 'Tem certeza?' } %>
+    <% end %>
+  </td>
+</tr>

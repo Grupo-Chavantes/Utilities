@@ -1,16 +1,40 @@
+<% content_for :title, "Inferências do SIPEF" %>
+
+<h1>Inferências do SIPEF</h1>
+
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Sipef inferences" %>
+<hr>
 
-<h1>Sipef inferences</h1>
-
-<div id="sipef_inferences">
-  <% @sipef_inferences.each do |sipef_inference| %>
-    <%= render sipef_inference %>
-    <p>
-      <%= link_to "Show this sipef inference", sipef_inference %>
-    </p>
+<%= form_with(model: @sipef_inference, local: true, multipart: true) do |form| %>
+  <% if @sipef_inference.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@sipef_inference.errors.count, "error") %> prohibited this sipef_inference from being saved:</h2>
+      <ul>
+        <% @sipef_inference.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New sipef inference", new_sipef_inference_path %>
+  <div>
+    <%= form.file_field :input_file, accept: ".xls,.xlsx" %>
+    <%= form.submit "Processar Arquivo" %>
+  </div>
+<% end %>
+
+<hr>
+
+<table id="sipef_inferences">
+  <thead>
+    <tr>
+      <th>Pagamentos para Inferência</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @sipef_inferences %>
+  </tbody>
+</table>

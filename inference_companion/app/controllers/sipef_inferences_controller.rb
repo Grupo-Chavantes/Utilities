@@ -1,22 +1,10 @@
 class SipefInferencesController < ApplicationController
-  before_action :set_sipef_inference, only: %i[ show edit update destroy ]
+  before_action :set_sipef_inference, only: %i[ destroy ]
 
   # GET /sipef_inferences or /sipef_inferences.json
   def index
-    @sipef_inferences = SipefInference.all
-  end
-
-  # GET /sipef_inferences/1 or /sipef_inferences/1.json
-  def show
-  end
-
-  # GET /sipef_inferences/new
-  def new
+    @sipef_inferences = SipefInference.order(created_at: :desc).limit(15)
     @sipef_inference = SipefInference.new
-  end
-
-  # GET /sipef_inferences/1/edit
-  def edit
   end
 
   # POST /sipef_inferences or /sipef_inferences.json
@@ -25,23 +13,10 @@ class SipefInferencesController < ApplicationController
 
     respond_to do |format|
       if @sipef_inference.save
-        format.html { redirect_to @sipef_inference, notice: "Sipef inference was successfully created." }
-        format.json { render :show, status: :created, location: @sipef_inference }
+        format.html { redirect_to sipef_inferences_path, notice: "Arquivo enviado para processamento." }
+        format.json { render json: @sipef_inference, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @sipef_inference.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /sipef_inferences/1 or /sipef_inferences/1.json
-  def update
-    respond_to do |format|
-      if @sipef_inference.update(sipef_inference_params)
-        format.html { redirect_to @sipef_inference, notice: "Sipef inference was successfully updated.", status: :see_other }
-        format.json { render :show, status: :ok, location: @sipef_inference }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sipef_inference.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +27,7 @@ class SipefInferencesController < ApplicationController
     @sipef_inference.destroy!
 
     respond_to do |format|
-      format.html { redirect_to sipef_inferences_path, notice: "Sipef inference was successfully destroyed.", status: :see_other }
+      format.html { redirect_to sipef_inferences_path, notice: "Arquivo excluído com sucesso.", status: :see_other }
       format.json { head :no_content }
     end
   end
@@ -65,6 +40,6 @@ class SipefInferencesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sipef_inference_params
-      params.expect(sipef_inference: [ :status ])
+      params.expect(sipef_inference: [ :input_file ])
     end
 end
