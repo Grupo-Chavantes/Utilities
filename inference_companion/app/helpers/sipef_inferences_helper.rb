@@ -1,0 +1,2 @@
+module SipefInferencesHelper
+end

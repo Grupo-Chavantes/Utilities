@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sipef_inference %>
+
+<div>
+  <%= link_to "Edit this sipef inference", edit_sipef_inference_path(@sipef_inference) %> |
+  <%= link_to "Back to sipef inferences", sipef_inferences_path %>
+
+  <%= button_to "Destroy this sipef inference", @sipef_inference, method: :delete %>
+</div>

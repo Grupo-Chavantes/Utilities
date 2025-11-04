@@ -1,0 +1,2 @@
+class SipefInference < ApplicationRecord
+end
