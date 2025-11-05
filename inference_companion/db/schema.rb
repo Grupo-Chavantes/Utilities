@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_04_150236) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_05_160458) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -43,6 +43,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_04_150236) do
     t.datetime "created_at", null: false
     t.integer "status", default: 0, null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.text "cnaes_keywords"
+    t.json "cnpjws"
+    t.datetime "created_at", null: false
+    t.string "legal_name", limit: 150
+    t.string "tax_id_number", limit: 14, null: false
+    t.datetime "updated_at", null: false
+    t.index ["tax_id_number"], name: "index_suppliers_on_tax_id_number", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
