@@ -4,6 +4,10 @@ class SipefInference < ApplicationRecord
 
   validates :input_file, presence: true
 
+  after_create do
+    InferSipefCodesJob.perform_later(id)
+  end
+
   enum :status, { awaiting: 0, processing: 1, processed: 2, failed: 3 }
 
   def humanize_status
