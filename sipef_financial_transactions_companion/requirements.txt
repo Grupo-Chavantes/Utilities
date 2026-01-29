@@ -1,0 +1,11 @@
+altgraph==0.17.5
+et_xmlfile==2.0.0
+numpy==2.4.1
+openpyxl==3.1.5
+packaging==26.0
+pandas==3.0.0
+pyinstaller==6.18.0
+pyinstaller-hooks-contrib==2026.0
+python-dateutil==2.9.0.post0
+setuptools==80.10.2
+six==1.17.0
