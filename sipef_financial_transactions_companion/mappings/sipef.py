@@ -65,8 +65,13 @@ COD_HISTORICO_TO_DOCTIPO = {
     920: 2,  # Depósito
     52: 3,  # TED
     62: 3,  # TED
+    250: 3,  # Folha de Pagamento > TED
+    361: 3,  # Pagamento conta água > TED
+    362: 3,  # Pagamento conta luz > TED
+    363: 3,  # Pagamento conta telefone > TED
     393: 3,  # TED
     438: 3,  # TED
+    470: 3,  # Transferência enviada > TED
     976: 3,  # TED
     983: 3,  # TED
     48: 4,  # DOC
@@ -132,6 +137,7 @@ COD_HISTORICO_TO_DOCTIPO = {
     833: 15,  # IPVA
     28: 16,  # Fatura
     979: 18,  # FGTS
+    144: 19,  # Transferência enviada > PIX
     445: 19,  # PIX
     821: 19  # PIX
 }

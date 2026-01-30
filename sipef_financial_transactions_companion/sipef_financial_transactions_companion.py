@@ -26,11 +26,9 @@ def read_spreadsheet() -> pandas.DataFrame:
 
 def infer_and_fill_columns(data_frame: pandas.DataFrame) -> pandas.DataFrame:
     data_frame["DocTipo"] = data_frame["Cod. Historico"].apply(
-        lambda x: COD_HISTORICO_TO_DOCTIPO.get(to_int_safe(x), 5)) # Outros
+        lambda x: COD_HISTORICO_TO_DOCTIPO.get(to_int_safe(x), 5)) # 5 = Outros
 
-    data_frame = data_frame.drop(columns=["DESPESA CÓDIGO", "Cod. Historico"])
-
-    return data_frame
+    return data_frame.drop(columns=["DESPESA CÓDIGO", "Cod. Historico"])
 
 
 def to_int_safe(value: any) -> int:
