@@ -1,3 +1,55 @@
+# Mapping from DESPESA CÓDIGO to Tipo Fornecedor
+DESPESA_CODIGO_TO_TIPO_FORNECEDOR = {
+    5329: 2, # MOVEIS E EQUIPAMENTOS > Fornecedor Materiais
+    5330: "1||2", # OBRA
+    5202: "", # JUROS/MULTAS PASSIVAS
+    4191: "", # TRIBUTOS E OBRIGAÇÕES FISCAIS / DESPESAS BANCARIAS / TARIFAS
+    5351: "", # IR SOBRE RESGATES
+    5352: "", # IOF SOBRE RESGATES
+    5281: "", # SALARIOS
+    5331: "", # VALE TRANSPORTE
+    5284: "", # FGTS
+    5363: "", # FERIAS
+    5364: "", # VERBAS RESCISORIAS
+    5332: "", # VALE ALIMENTAÇÃO
+    5365: 3, # MEDICINA DO TRABALHO > Fornecedor Médicos
+    5366: 1, # RELOGIO DE PONTO > Fornecedor Serviços
+    5289: 1, # MANUTENÇÃO GERADOR > Fornecedor Serviços
+    5290: 1, # SERVIÇO DE MANUTENÇÃO PREVENTIVA E CORRETIVA DE EQUIPAMENTOS MÉDICOS E HOSPITALARES /ENGENHARIA CLÍN > Fornecedor Serviços
+    5291: 1, # SERVIÇOS DE EXAMES LABORATORIAIS > Fornecedor Serviços
+    5292: 1, # SISTEMA DE GERENCIAMENTO E INFORMAÇÃO INTEGRADO / SOFTWARE DE GESTÃO / MONITORAMENTO / LOCAÇÃO DE EQ > Fornecedor Serviços
+    5293: 1, # SERVIÇO DE REMOÇÃO > Fornecedor Serviços
+    5294: 1, # SERVIÇOS DE IMAGEM DIAGNÓSTICO RX/TOMO/RESSONÂNCIA/MAMA > Fornecedor Serviços
+    5295: 1, # SERVIÇOS DE SEGURANÇA > Fornecedor Serviços
+    5296: 1, # SERVIÇOS DE LIMPEZA > Fornecedor Serviços
+    5297: 1, # SERVIÇO DE LAVANDERIA > Fornecedor Serviços
+    5298: 1, # SERVIÇO DE MANUTENÇÃO PREVENTIVA PREDIAL > Fornecedor Serviços
+    5299: 1, # NUTRIÇÃO E DIETÉTICA ALIMENTAÇÃO DE FUNCIONÁRIOS E PACIENTES > Fornecedor Serviços
+    5300: 1, # ESTERILIZAÇÃO DE MATERIAIS > Fornecedor Serviços
+    5301: 1, # UNIFORMES E CRACHÁS DE FUNCIONÁRIOS > Fornecedor Serviços
+    5345: 1, # OUTROS SERVIÇOS DE TERCEIROS > Fornecedor Serviços
+    5303: 2, # MATERIAL DE CAMPANHAS E INDENTIDADE VISUAL USO PERMANENTE > Fornecedor Materiais
+    5304: 2, # MATERIAIS MÉDICOS / DE ENFERMAGEM / EPI USO INTERNO (UTILIZÁVEL) > Fornecedor Materiais
+    5305: 2, # MATERIAL DE EXPEDIENTE > Fornecedor Materiais
+    5306: 2, # MEDICAMENTOS DE USO INTERNO (UTILIZÁVEL) > Fornecedor Materiais
+    5307: 2, # GASES MEDICINAIS > Fornecedor Materiais
+    5309: 1, # SEGUROS > Fornecedor Serviços
+    5310: 1, # TELEFONIA > Fornecedor Serviços
+    5311: "", # AGUA > Fornecedor Serviços
+    5312: 1, # INTERNET > Fornecedor Serviços
+    5313: "", # ENERGIA ELETRICA > Fornecedor Serviços
+    5342: "", # CENTRO DE SERVIÇOS INTEGRADOS
+    5367: "1||2||3", # PAGAMENTOS EXTRAORDINARIOS/ESTORNOS
+    5322: 3, # SERVIÇOS MEDICOS > Fornecedor Médicos
+    5323: 1, # COORDENAÇÃO ADM > Fornecedor Serviços
+    5324: 1, # COORDENAÇÃO DE FARMACIA > Fornecedor Serviços
+    5325: 1, # COORDENAÇÃO DE ENFERMAGEM > Fornecedor Serviços
+    5326: 1, # SUPERVISÃO DE ENFERMAGEM > Fornecedor Serviços
+    5327: 1, # DIRETOR MEDICO > Fornecedor Serviços
+    5335: 1 # SUPERVISÃO ADM > Fornecedor Serviços
+}
+
+
 # Mapping from Cod. Historico to DocTipo
 COD_HISTORICO_TO_DOCTIPO = {
     2: 1,  # Cheque

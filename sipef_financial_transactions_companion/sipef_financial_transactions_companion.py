@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pandas
 
-from mappings.sipef import COD_HISTORICO_TO_DOCTIPO
+from mappings.sipef import DESPESA_CODIGO_TO_TIPO_FORNECEDOR, COD_HISTORICO_TO_DOCTIPO
 
 
 def read_spreadsheet() -> pandas.DataFrame:
@@ -25,6 +25,10 @@ def read_spreadsheet() -> pandas.DataFrame:
 
 
 def infer_and_fill_columns(data_frame: pandas.DataFrame) -> pandas.DataFrame:
+    data_frame["Tipo Fornecedor"] = data_frame["DESPESA CÓDIGO"].apply(
+        lambda x: DESPESA_CODIGO_TO_TIPO_FORNECEDOR.get(to_int_safe(x), "")
+    )
+
     data_frame["DocTipo"] = data_frame["Cod. Historico"].apply(
         lambda x: COD_HISTORICO_TO_DOCTIPO.get(to_int_safe(x), 5)) # 5 = Outros
 
